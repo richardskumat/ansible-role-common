@@ -13,5 +13,7 @@ molecule:
     - cat /etc/os-release
     - ansible --version
     - molecule --version
-    - molecule lint
-    - molecule syntax
+    - molecule lint || true
+    - ansible lint defaults/* || true
+    - ansible lint tasks/* || true
+    - ansible-lint vars/* || true
