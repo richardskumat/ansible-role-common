@@ -13,6 +13,7 @@ cache:
     - virtenv/
 
 before_script:
+  - apt-get update
   - apt-get -y install python-virtualenv virtualenv python-pip
   - pip install virtualenv
   - virtualenv virtenv
