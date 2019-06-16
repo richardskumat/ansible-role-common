@@ -1,3 +1,4 @@
+---
 # install a list of packages for centos
 - name: Enable epel repo
   yum:
