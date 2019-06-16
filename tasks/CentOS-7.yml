@@ -4,44 +4,45 @@
   yum:
     name: epel-release
     state: present
+
 - name: Install common list of packages for Centos
   yum:
     name: "{{ packages }}"
   vars:
     packages:
-    - git
-    - curl
-    - wget
-    - rsync
-    - borgbackup
-    - sudo
-    - vim-enhanced
-    - net-tools
-    - htop
-    - ncdu
-    - tmux
-    - smartmontools
-    - bash-completion
-    - cryptsetup
-    - yum-cron
-    - tcpdump
-    - sysstat
-    - mtr
-    - traceroute
-    - bind-utils
-    - whois
-    - zip
-    - unzip
-    - hdparm
-    - udisks2
-    - pciutils
-    - usbutils
-    - nfs-utils
-    - dmidecode
-    - lshw
-    - strace
-    - nmap
-# enable yum-cron
+     - git
+     - curl
+     - wget
+     - rsync
+     - borgbackup
+     - sudo
+     - vim-enhanced
+     - net-tools
+     - htop
+     - ncdu
+     - tmux
+     - smartmontools
+     - bash-completion
+     - cryptsetup
+     - yum-cron
+     - tcpdump
+     - sysstat
+     - mtr
+     - traceroute
+     - bind-utils
+     - whois
+     - zip
+     - unzip
+     - hdparm
+     - udisks2
+     - pciutils
+     - usbutils
+     - nfs-utils
+     - dmidecode
+     - lshw
+     - strace
+     - nmap
+  # enable yum-cron
   notify: 'enable CentOS services'
 
 - name: Configure yum-cron
