@@ -9,6 +9,7 @@
    backup: yes
   when:
    - not ansible_lsb.id == 'Raspbian'
+
 - name: Create sources.list file for Raspbian
   template:
    src: sourceslist.raspbian.conf.j2
@@ -19,23 +20,27 @@
    backup: yes
   when:
    - ansible_lsb.id == 'Raspbian'
+
 - name: Update cache
   apt:
    update_cache: yes
-   name: "{{ packages}}"
+   name: "{{ packages }}"
   vars:
    packages:
-   - aptitude
-   - unattended-upgrades
+    - aptitude
+    - unattended-upgrades
+
 - name: run aptitude safe-upgrade
 # 2.4 doesn't need aptitude anymore, since it falls back to apt-get anyway
 # leaving it here, in case I use 2.2 on stretch
   apt:
    upgrade: dist
+
 - name: Remove apt package popularity-contest
   apt:
    name: popularity-contest
    state: absent
+
 - name: Create unattended conf file
   template:
    src: 50unattended-upgrades.j2
@@ -45,4 +50,3 @@
    mode: 0644
    backup: yes
   notify: restart unattended-upgrades
-
