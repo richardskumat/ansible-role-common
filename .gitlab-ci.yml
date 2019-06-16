@@ -1,4 +1,6 @@
 ---
+image: debian:9
+
 stages:
   - converge
 
@@ -11,7 +13,7 @@ cache:
     - virtenv/
 
 before_script:
-  - apt-get install python-virtualenv virtualenv python-pip
+  - apt-get -y install python-virtualenv virtualenv python-pip
   - pip install virtualenv
   - virtualenv virtenv
   - source virtenv/bin/activate
