@@ -27,7 +27,7 @@
    - mtr
    - traceroute
    - dnsutils
-   - whois 
+   - whois
    - zip
    - unzip
    - hdparm

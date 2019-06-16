@@ -29,11 +29,10 @@
   apt:
    update_cache: yes
    name: "{{ packages }}"
-   state: absent 
+   state: absent
    autoremove: yes
   vars:
    packages:
    - bluez
    - bluez-firmware
    - triggerhappy
-  

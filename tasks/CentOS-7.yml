@@ -10,7 +10,7 @@
     packages:
     - git
     - curl
-    - wget 
+    - wget
     - rsync
     - borgbackup
     - sudo
@@ -28,7 +28,7 @@
     - mtr
     - traceroute
     - bind-utils
-    - whois 
+    - whois
     - zip
     - unzip
     - hdparm
@@ -40,7 +40,7 @@
     - lshw
     - strace
     - nmap
-# enable yum-cron    
+# enable yum-cron
   notify: 'enable CentOS services'
 
 - name: Configure yum-cron

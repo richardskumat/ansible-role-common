@@ -1,8 +1,8 @@
 ---
-image: gitlab/gitlab-runner:v11.11.2
+image: debian:9
 
 stages:
-  - converge
+  - test
 
 variables:
   PIP_CACHE_DIR: "$CI_PROJECT_DIR/.pip"
@@ -15,7 +15,6 @@ cache:
 before_script:
   - apt-get update
   - apt-get -y install python-virtualenv virtualenv python-pip
-  - pip install virtualenv
   - virtualenv virtenv
   - source virtenv/bin/activate
 
@@ -24,10 +23,9 @@ molecule:
   tags:
     - docker
   script:
-    - docker -v
     - python -V
     - cat /etc/os-release
     - pip install ansible molecule docker
     - ansible --version
     - molecule --version
-    - molecule converge
+    - molecule test
