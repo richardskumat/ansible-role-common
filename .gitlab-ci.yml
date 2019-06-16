@@ -13,4 +13,5 @@ molecule:
     - cat /etc/os-release
     - ansible --version
     - molecule --version
-    - molecule test
+    - molecule lint
+    - molecule syntax
