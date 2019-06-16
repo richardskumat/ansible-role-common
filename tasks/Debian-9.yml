@@ -54,3 +54,4 @@
    # nmap
    - nmap
   notify: restart unattended-upgrades
+

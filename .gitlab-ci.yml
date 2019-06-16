@@ -1,22 +1,8 @@
 ---
-image: debian:9
+image: qwe1/debian9-ansible-molecule:latest
 
 stages:
   - test
-
-variables:
-  PIP_CACHE_DIR: "/root/.pip"
-
-cache:
-  paths:
-    - /root/.pip/
-    - /root/virtenv/
-
-before_script:
-  - apt-get update
-  - apt-get -y install python-virtualenv virtualenv python-pip
-  - virtualenv /root/virtenv
-  - source /root/virtenv/bin/activate
 
 molecule:
   stage: test
@@ -25,7 +11,6 @@ molecule:
   script:
     - python -V
     - cat /etc/os-release
-    - pip install ansible molecule docker
     - ansible --version
     - molecule --version
     - molecule test
