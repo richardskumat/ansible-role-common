@@ -19,7 +19,7 @@ before_script:
   - source virtenv/bin/activate
 
 molecule:
-  stage: converge
+  stage: test
   tags:
     - docker
   script:
