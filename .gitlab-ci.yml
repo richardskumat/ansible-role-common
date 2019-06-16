@@ -14,6 +14,6 @@ molecule:
     - ansible --version
     - molecule --version
     - molecule lint || true
-    - ansible lint defaults/* || true
-    - ansible lint tasks/* || true
+    - ansible-lint defaults/* || true
+    - ansible-lint tasks/* || true
     - ansible-lint vars/* || true
