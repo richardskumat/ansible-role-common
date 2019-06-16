@@ -1,0 +1,39 @@
+---
+- name: Add backport repo
+  lineinfile:
+   line: 'deb {{ apt_src_main_url }} {{ ansible_distribution_release }}-backports main contrib non-free'
+   path: "/etc/apt/sources.list.d/{{ ansible_distribution_release }}.list"
+   create: yes
+   owner: root
+   group: root
+   mode: 0644
+   state: present
+
+- name: Add Debian apt key 1
+  apt_key:
+   keyserver: keyserver.ubuntu.com
+   id: A1BD8E9D78F7FE5C3E65D8AF8B48AD6246925553
+
+- name: Add Debian apt key 2
+  apt_key:
+   keyserver: keyserver.ubuntu.com
+   id: 126C0D24BD8A2942CC7DF8AC7638D0442B90D010
+
+- name: Remove the default /etc/apt/sources.list.d/raspi.list
+  file:
+    dest: /etc/apt/sources.list.d/raspi.list
+    state: absent
+
+# remove some packages
+- name: Update apt cache
+  apt:
+   update_cache: yes
+   name: "{{ packages }}"
+   state: absent 
+   autoremove: yes
+  vars:
+   packages:
+   - bluez
+   - bluez-firmware
+   - triggerhappy
+  

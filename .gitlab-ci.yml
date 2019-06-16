@@ -1,0 +1,30 @@
+---
+stages:
+  - converge
+
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.pip"
+
+cache:
+  paths:
+    - .pip/
+    - virtenv/
+
+before_script:
+  - apt-get install python-virtualenv virtualenv python-pip
+  - pip install virtualenv
+  - virtualenv virtenv
+  - source virtenv/bin/activate
+
+molecule:
+  stage: converge
+  tags:
+    - pip
+    - docker
+  script:
+    - docker -v
+    - python -V
+    - pip install ansible molecule docker
+    - ansible --version
+    - molecule --version
+    - molecule converge

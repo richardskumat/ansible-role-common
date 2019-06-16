@@ -1,0 +1,20 @@
+---
+- name: restart unattended-upgrades
+  service:
+   name: unattended-upgrades
+   state: restarted
+   enabled: yes
+
+- name: enable yum cron
+  service:
+   name: yum-cron
+   state: restarted
+   enabled: yes
+  listen: "enable CentOS services"
+
+- name: enable smartd
+  service:
+   name: smartd
+   state: restarted
+   enabled: yes
+  listen: "enable CentOS services"
