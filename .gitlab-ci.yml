@@ -1,5 +1,5 @@
 ---
-image: debian:9
+image: gitlab/gitlab-runner:v11.11.2
 
 stages:
   - converge
@@ -26,6 +26,7 @@ molecule:
   script:
     - docker -v
     - python -V
+    - cat /etc/os-release
     - pip install ansible molecule docker
     - ansible --version
     - molecule --version
