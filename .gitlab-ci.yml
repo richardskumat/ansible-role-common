@@ -1,5 +1,5 @@
 ---
-image: gitlab/gitlab-runner:v11.11.3
+image: gitlab/gitlab-runner:v11.11.2
 
 stages:
   - converge
