@@ -49,8 +49,16 @@
     - python3-setuptools
     # useful for ansible
     - lsb-release
-    # useful for running a chroot over raspbian images with systemd-nspawn
-    - systemd-container
     # nmap
     - nmap
+  notify: restart unattended-upgrades
+
+- name: Remove useless packages I regret installing
+  apt:
+   name: "{{ packages }}"
+   install_recommends: no
+   state: absent
+  vars:
+   packages:
+    - systemd-container
   notify: restart unattended-upgrades
