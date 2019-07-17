@@ -9,12 +9,7 @@ lint:
     config-file: molecule/default/yaml-lint.yml
 platforms:
   - name: "instance_${MOLECULE_DISTRO:-debian9}"
-    image: ${MOLECULE_DISTRO:debian:9}
-
-# debian 7 & 8 are too bothersome to test due to old repos being moved to debian archive
-
-  - name: centos_7
-    image: centos:7
+    image: "${MOLECULE_DISTRO:-debian:9}"
 provisioner:
   name: ansible
   log: true
