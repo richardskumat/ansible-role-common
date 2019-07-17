@@ -19,9 +19,9 @@ install:
 
 before_script:
   # Use actual Ansible Galaxy role name for the project directory.
-  #- cd ../
-  #- mv ansible-role-$ROLE_NAME geerlingguy.$ROLE_NAME
-  #- cd geerlingguy.$ROLE_NAME
+  - cd ../
+  - mv $ROLE_NAME richardskumat.$ROLE_NAME
+  - cd richardskumat.$ROLE_NAME
   - docker -v
   - id
 
@@ -31,4 +31,4 @@ script:
   - molecule test || true
 
 notifications:
-webhooks: https://galaxy.ansible.com/api/v1/notifications/
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/
