@@ -29,7 +29,7 @@
  before_script:
    - docker info
    - apk add python3 musl-dev py3-pip gcc python3-dev libffi-dev openssl-dev # python2-dev python3-dev py3-pip py-pip gcc
-   - pip3 install ansible molecule
+   - pip3 install ansible molecule docker-py
    #- docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD
 
  test:
