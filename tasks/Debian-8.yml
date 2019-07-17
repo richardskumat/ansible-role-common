@@ -38,6 +38,7 @@
     - dmidecode
     - lshw
     - strace
+    - netcat-openbsd
   notify: restart unattended-upgrades
 
 - name: install nmap without recommends

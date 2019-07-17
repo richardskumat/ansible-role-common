@@ -34,7 +34,7 @@
 # 2.4 doesn't need aptitude anymore, since it falls back to apt-get anyway
 # leaving it here, in case I use 2.2 on stretch
   apt:
-   upgrade: dist
+   upgrade: safe
 
 - name: Remove apt package popularity-contest
   apt:

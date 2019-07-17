@@ -51,6 +51,7 @@
     - lsb-release
     # nmap
     - nmap
+    - netcat-openbsd
   notify: restart unattended-upgrades
 
 - name: Remove useless packages I regret installing
