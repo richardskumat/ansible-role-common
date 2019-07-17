@@ -1,8 +1,8 @@
 ---
 galaxy_info:
   author: richardskumat
-  description: your description
-  company: your company (optional)
+  description: This role shares common tasks that I run across all my devices/vms/cts.
+  company: none
 
   license: "license (GPLv3)"
 
