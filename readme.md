@@ -1,7 +1,7 @@
 ansible-role-common
 =========
 
-This is a personal ansible role I use on my own devices/vms/cts.
+This role shares common tasks that I run across all my devices/vms/cts.
 
 It has tasks for debian 7-9, raspbian and centos 7.
 

@@ -30,5 +30,5 @@ script:
   - molecule converge || true
   - molecule test || true
 
-#notifications:
-#webhooks: https://galaxy.ansible.com/api/v1/notifications/
+notifications:
+webhooks: https://galaxy.ansible.com/api/v1/notifications/
