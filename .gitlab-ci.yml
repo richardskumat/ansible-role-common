@@ -28,11 +28,8 @@
 
  before_script:
    - docker info
-   - apk add python2 py-pip
+   - apk add python2 py-pip gcc
    - pip install ansible molecule
-
-
-
    #- docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD
 
  test:
