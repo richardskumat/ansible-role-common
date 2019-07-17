@@ -17,8 +17,6 @@ before_script:
 
 test:
   stage: test
-  tags:
-    - docker-builder
   script:
     - molecule converge || true
     - molecule test || true

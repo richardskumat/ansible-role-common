@@ -5,6 +5,25 @@ This role shares common tasks that I run across all my devices/vms/cts.
 
 It has tasks for debian 7-9, raspbian and centos 7.
 
+Links
+------------
+
+Gitlab:
+
+https://gitlab.com/richardskumat/ansible-role-common
+
+Gitlab-ci:
+
+https://gitlab.com/richardskumat/ansible-role-common/pipelines
+
+Github:
+
+https://github.com/richardskumat/ansible-role-common
+
+Travis:
+
+https://travis-ci.org/richardskumat/ansible-role-common
+
 Requirements
 ------------
 
