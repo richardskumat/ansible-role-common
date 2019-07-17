@@ -5,9 +5,11 @@ driver:
   name: docker
 lint:
   name: yamllint
+  options:
+    config-file: molecule/default/yaml-lint.yml
 platforms:
-  - name: debian_9
-    image: debian:9
+  - name: "instance_${MOLECULE_DISTRO:-debian9}"
+    image: ${MOLECULE_DISTRO:debian:9}
 
 # debian 7 & 8 are too bothersome to test due to old repos being moved to debian archive
 
