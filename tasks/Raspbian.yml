@@ -21,8 +21,8 @@
 
 - name: Remove the default /etc/apt/sources.list.d/raspi.list
   file:
-    dest: /etc/apt/sources.list.d/raspi.list
-    state: absent
+   dest: /etc/apt/sources.list.d/raspi.list
+   state: absent
 
 # remove some packages
 - name: Update apt cache
@@ -33,6 +33,6 @@
    autoremove: yes
   vars:
    packages:
-   - bluez
-   - bluez-firmware
-   - triggerhappy
+    - bluez
+    - bluez-firmware
+    - triggerhappy

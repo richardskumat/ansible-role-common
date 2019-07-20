@@ -10,9 +10,7 @@ galaxy_info:
 
 
   platforms:
-  - name: Debian
-    versions:
-      - 9
+    - name: Debian
 
   galaxy_tags:
     - debian

@@ -9,9 +9,6 @@ env:
   matrix:
     - MOLECULE_DISTRO: debian:9
     - MOLECULE_DISTRO: debian:10
-    #- MOLECULE_DISTRO: ubuntu1804
-    #- MOLECULE_DISTRO: ubuntu1604
-    # - MOLECULE_DISTRO: debian9
 
 install:
   # Install test dependencies.

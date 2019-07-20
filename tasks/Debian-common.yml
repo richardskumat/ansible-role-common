@@ -31,8 +31,8 @@
     - unattended-upgrades
 
 - name: run aptitude safe-upgrade
-# 2.4 doesn't need aptitude anymore, since it falls back to apt-get anyway
-# leaving it here, in case I use 2.2 on stretch
+  # 2.4 doesn't need aptitude anymore, since it falls back to apt-get anyway
+  # leaving it here, in case I use 2.2 on stretch
   apt:
    upgrade: safe
 
