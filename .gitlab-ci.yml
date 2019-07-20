@@ -5,8 +5,7 @@ image: qwe1/dind-ansible-molecule:latest
 variables:
   DOCKER_HOST: tcp://docker:2375/
   DOCKER_DRIVER: overlay2
-  MOLECULE_DISTRO: "debian:9"
-  MOLECULE_DISTRO: "debian:10"
+
 
 services:
   - docker:dind
@@ -17,8 +16,18 @@ stages:
 before_script:
   - docker info
 
-test:
+test_d9:
   stage: test
+  variables:
+    MOLECULE_DISTRO: "debian:9"
+  script:
+    - molecule converge || true
+    - molecule test || true
+
+test_d10:
+  stage: test
+  variables:
+    MOLECULE_DISTRO: "debian:10"
   script:
     - molecule converge || true
     - molecule test || true
