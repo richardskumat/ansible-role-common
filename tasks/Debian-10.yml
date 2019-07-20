@@ -1,0 +1,65 @@
+---
+- name: install common basic package list
+  apt:
+   name: "{{ packages }}"
+   install_recommends: no
+  vars:
+   packages:
+    - git
+    - curl
+    - wget
+    - rsync
+    - borgbackup
+    - less
+    - sudo
+    - vim
+    - net-tools
+    - htop
+    - ncdu
+    - tmux
+    - smartmontools
+    - bash-completion
+    - cryptsetup
+    - apt-transport-https
+    - apt-file
+    - tcpdump
+    - sysstat
+    - mtr
+    - traceroute
+    - dnsutils
+    - whois
+    - zip
+    - unzip
+    - hdparm
+    - udisks2
+    - pciutils
+    - usbutils
+    - nfs-common
+    - dmidecode
+    - lshw
+    - strace
+    - netfilter-persistent
+    # tasty python
+    - python-pip
+    - python3-pip
+    - virtualenv
+    - python-virtualenv
+    - python3-virtualenv
+    - python-setuptools
+    - python3-setuptools
+    # useful for ansible
+    - lsb-release
+    # nmap
+    - nmap
+    - netcat-openbsd
+  notify: restart unattended-upgrades
+
+- name: Remove useless packages I regret installing
+  apt:
+   name: "{{ packages }}"
+   install_recommends: no
+   state: absent
+  vars:
+   packages:
+    - systemd-container
+  notify: restart unattended-upgrades

@@ -5,6 +5,8 @@ image: qwe1/dind-ansible-molecule:latest
 variables:
   DOCKER_HOST: tcp://docker:2375/
   DOCKER_DRIVER: overlay2
+  MOLECULE_DISTRO: "debian:9"
+  MOLECULE_DISTRO: "debian:10"
 
 services:
   - docker:dind
