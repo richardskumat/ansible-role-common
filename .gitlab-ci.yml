@@ -23,9 +23,9 @@ before_script:
   - docker info
   - ansible --version
   - molecule --version
-  - cd .. || true
-  - mv $ROLE_NAME $GALAXY_USERNAME.$ROLE_NAME || true
-  - cd $GALAXY_USERNAME.$ROLE_NAME || true
+  - cd ..
+  - cp -aR $ROLE_NAME $GALAXY_USERNAME.$ROLE_NAME
+  - cd $GALAXY_USERNAME.$ROLE_NAME
 
 test_d9:
   stage: test
