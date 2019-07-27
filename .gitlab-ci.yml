@@ -9,6 +9,8 @@ variables:
   # https://gitlab.com/gitlab-org/gitlab-ce/issues/64959
   # 19.03 had some breaking changes compared to 18.09
   DOCKER_TLS_CERTDIR: ""
+  ROLE_NAME: ansible-role-common
+  GALAXY_USERNAME: richardskumat
 
 
 services:
@@ -19,6 +21,11 @@ stages:
 
 before_script:
   - docker info
+  - ansible --version
+  - molecule --version
+  - cd ..
+  - mv $ROLE_NAME $GALAXY_USERNAME.$ROLE_NAME
+  - cd $GALAXY_USERNAME.$ROLE_NAME
 
 test_d9:
   stage: test
