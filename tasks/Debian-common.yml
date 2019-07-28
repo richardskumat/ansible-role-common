@@ -1,4 +1,8 @@
 ---
+# this will create the same template file if I ever decide to run testing or sid again
+# so this will need to be fixed some time
+# ie look at templates/sourceslist.conf.j2
+# sid and testing don't need backports and security
 - name: Create sources.list file
   template:
    src: sourceslist.conf.j2
