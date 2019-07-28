@@ -31,7 +31,7 @@ before_script:
 test_d9:
   stage: test
   variables:
-    MOLECULE_DISTRO: "debian:9"
+    MOLECULE_DISTRO: "qwe1/debian-nonfree:9"
   script:
     - molecule converge || true
     - molecule test || true
@@ -39,7 +39,7 @@ test_d9:
 test_d10:
   stage: test
   variables:
-    MOLECULE_DISTRO: "debian:10"
+    MOLECULE_DISTRO: "qwe1/debian-nonfree:10"
   script:
     - molecule converge || true
     - molecule test || true
