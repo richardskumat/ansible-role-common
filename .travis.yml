@@ -5,8 +5,9 @@ services: docker
 
 env:
   global:
-    - ROLE_NAME: ansible_role_common
+    - ROLE_NAME: ansible-role-common
     - GALAXY_USERNAME: richardskumat
+    - GALAXY_ROLENAME: ansible_role_common
   matrix:
     - MOLECULE_DISTRO: debian:9
     - MOLECULE_DISTRO: debian:10
@@ -18,10 +19,11 @@ install:
 before_script:
   # Use actual Ansible Galaxy role name for the project directory.
   - cd ../
-  - mv $ROLE_NAME $GALAXY_USERNAME.$ROLE_NAME
-  - cd $GALAXY_USERNAME.$ROLE_NAME
+  - mv $ROLE_NAME $GALAXY_USERNAME.$GALAXY_ROLENAME
+  - cd $GALAXY_USERNAME.$GALAXY_ROLENAME
   - docker -v
   - id
+
 
 script:
   # Run tests.
