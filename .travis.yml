@@ -24,11 +24,8 @@ before_script:
   - docker -v
   - id
 
-
 script:
-  # Run tests.
-  - molecule converge || true
-  - molecule test || true
+  - molecule test
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
