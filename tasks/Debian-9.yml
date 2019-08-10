@@ -1,10 +1,8 @@
 ---
 - name: install common basic package list
   apt:
-   name: "{{ packages }}"
-   install_recommends: no
-  vars:
-   packages:
+   install_recommends: 'no'
+   name:
     - git
     - curl
     - wget
@@ -52,14 +50,4 @@
     # nmap
     - nmap
     - netcat-openbsd
-  notify: restart unattended-upgrades
-
-- name: Remove useless packages I regret installing
-  apt:
-   name: "{{ packages }}"
-   install_recommends: no
-   state: absent
-  vars:
-   packages:
-    - systemd-container
   notify: restart unattended-upgrades

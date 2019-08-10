@@ -7,9 +7,7 @@
 
 - name: Install common list of packages for Centos
   yum:
-    name: "{{ packages }}"
-  vars:
-    packages:
+    name:
       - git
       - curl
       - wget
@@ -49,7 +47,7 @@
   template:
     src: templates/yum-cron
     dest: /etc/yum/yum-cron.conf
-    backup: yes
+    backup: 'yes'
     owner: root
     group: root
     mode: 0644

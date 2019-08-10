@@ -1,10 +1,8 @@
 ---
 - name: install common basic package list
   apt:
-   name: "{{ packages }}"
-   install_recommends: no
-  vars:
-   packages:
+   install_recommends: 'no'
+   name:
     - git
     - curl
     - wget
@@ -46,4 +44,4 @@
 - name: install nmap without recommends
   apt:
    name: nmap
-   install_recommends: no
+   install_recommends: 'no'

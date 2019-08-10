@@ -3,7 +3,7 @@
   lineinfile:
    line: 'deb {{ apt_src_main_url }} {{ ansible_distribution_release }}-backports main contrib non-free'
    path: "/etc/apt/sources.list.d/{{ ansible_distribution_release }}.list"
-   create: yes
+   create: 'yes'
    owner: root
    group: root
    mode: 0644
@@ -27,10 +27,10 @@
 # remove some packages
 - name: Update apt cache
   apt:
-   update_cache: yes
+   update_cache: 'yes'
    name: "{{ packages }}"
    state: absent
-   autoremove: yes
+   autoremove: 'yes'
   vars:
    packages:
     - bluez
