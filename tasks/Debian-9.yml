@@ -49,5 +49,6 @@
     - lsb-release
     # nmap
     - nmap
+    - iperf
     - netcat-openbsd
   notify: restart unattended-upgrades

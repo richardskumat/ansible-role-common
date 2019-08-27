@@ -49,15 +49,14 @@
     - lsb-release
     # nmap
     - nmap
+    - iperf
     - netcat-openbsd
   notify: restart unattended-upgrades
 
 - name: Remove useless packages I regret installing
   apt:
-   name: "{{ packages }}"
+   name:
+    - systemd-container
    install_recommends: 'no'
    state: absent
-  vars:
-   packages:
-    - systemd-container
   notify: restart unattended-upgrades
