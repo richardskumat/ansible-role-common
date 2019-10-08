@@ -50,3 +50,13 @@
    mode: 0644
    backup: 'yes'
   notify: restart unattended-upgrades
+
+- name: Create unattended conf file to enable unattended-upgrades
+  template:
+   src: 20auto-upgrades.j2
+   dest: /etc/apt/apt.conf.d/20auto-upgrades
+   owner: root
+   group: root
+   mode: 0644
+   backup: 'yes'
+  notify: restart unattended-upgrades
