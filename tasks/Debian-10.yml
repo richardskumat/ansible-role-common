@@ -33,6 +33,8 @@
     # required for unlocking luks encrypted drives for udisks2
     # https://github.com/pop-os/pop/issues/163
     - libblockdev-crypto2
+    # apparmor profiles
+    - apparmor-profiles
     - pciutils
     - usbutils
     - nfs-common
