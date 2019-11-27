@@ -45,6 +45,8 @@
     - python3-virtualenv
     - python-setuptools
     - python3-setuptools
+    # gcc for pip
+    - gcc
     # useful for ansible
     - lsb-release
     # nmap
