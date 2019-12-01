@@ -52,6 +52,8 @@
     - python3-setuptools
     # gcc for pip
     - gcc
+    # add rclone for backup
+    - rclone
     # useful for ansible
     - lsb-release
     # nmap
