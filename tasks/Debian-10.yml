@@ -43,12 +43,8 @@
     - strace
     - netfilter-persistent
     # tasty python
-    - python-pip
     - python3-pip
-    - virtualenv
-    - python-virtualenv
     - python3-virtualenv
-    - python-setuptools
     - python3-setuptools
     # gcc for pip
     - gcc
@@ -60,12 +56,4 @@
     - nmap
     - iperf
     - netcat-openbsd
-  notify: restart unattended-upgrades
-
-- name: Remove useless packages I regret installing
-  apt:
-   name:
-    - systemd-container
-   install_recommends: 'no'
-   state: absent
   notify: restart unattended-upgrades
