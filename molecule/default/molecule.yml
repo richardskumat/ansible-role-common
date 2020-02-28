@@ -18,5 +18,6 @@ platforms:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
 provisioner:
   name: ansible
+  log: true
 scenario:
   name: default
