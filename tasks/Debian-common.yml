@@ -51,6 +51,8 @@
    backup: 'yes'
   notify: restart unattended-upgrades
 
+# I believe this is required since buster
+# since I don't remember having this task for stretch
 - name: Create unattended conf file to enable unattended-upgrades
   template:
    src: 20auto-upgrades.j2

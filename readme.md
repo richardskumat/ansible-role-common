@@ -3,7 +3,7 @@ ansible-role-common
 
 This role shares common tasks that I run across all my devices/vms/cts.
 
-It has tasks for debian 7-9, raspbian and centos 7.
+It has tasks for debian 9-10, raspbian and centos 7-8.
 
 Links
 ------------
@@ -27,9 +27,7 @@ https://travis-ci.org/richardskumat/ansible-role-common
 Requirements
 ------------
 
-I mostly use latest ansible version from a python2 virtualenv.
-
-On 20190717, this is ansible 2.8.x.
+ansible > 2.8
 
 Role Variables
 --------------

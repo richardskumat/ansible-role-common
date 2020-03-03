@@ -22,7 +22,7 @@
       - smartmontools
       - bash-completion
       - cryptsetup
-      - yum-cron
+      - dnf-automatic
       - tcpdump
       - sysstat
       - mtr
@@ -42,13 +42,13 @@
       - nmap
   # enable services
   notify:
-    - 'enable yum-cron'
+    - 'enable dnf-automatic'
     - 'enable smartd'
 
 - name: Configure yum-cron
   template:
-    src: templates/yum-cron.j2
-    dest: /etc/yum/yum-cron.conf
+    src: dnf-automatic.conf.j2
+    dest: /etc/dnf/automatic.conf
     backup: 'yes'
     owner: root
     group: root

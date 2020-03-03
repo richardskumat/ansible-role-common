@@ -1,10 +1,4 @@
 ---
-# apt.conf
-apt_proxy_user: proxyuser
-apt_proxy_password: proxypass
-apt_proxy_url: 192.168.200.4
-apt_proxy_port: 3128
-apt_proxy_http: http
 apt_src_main_url: 'http://cdn-fastly.deb.debian.org/debian'
 apt_src_security_url: 'http://security.debian.org/'
 raspbian_debian_mirrors: 'http://raspbian.raspberrypi.org/raspbian/'

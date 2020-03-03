@@ -5,16 +5,23 @@
    state: restarted
    enabled: 'yes'
 
-- name: enable yum cron
+- name: enable yum-cron on CentOS 7
   service:
    name: yum-cron
    state: restarted
    enabled: 'yes'
-  listen: "enable CentOS services"
+  listen: "enable yum-cron"
 
 - name: enable smartd
   service:
    name: smartd
    state: restarted
    enabled: 'yes'
-  listen: "enable CentOS services"
+  listen: "enable smartd"
+
+- name: enable dnf-automatic on CentOS 8
+  service:
+   name: dnf-automatic
+   state: restarted
+   enabled: 'yes'
+  listen: "enable dnf-automatic"

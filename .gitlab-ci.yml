@@ -1,12 +1,8 @@
 ---
-# use my own docker:stable image that has
-# ansible and molecule added
 image: qwe1/dind-ansible-molecule:latest
 
 variables:
   DOCKER_DRIVER: overlay2
-  # https://gitlab.com/gitlab-org/gitlab-ce/issues/64959
-  # 19.03 had some breaking changes compared to 18.09
   DOCKER_TLS_CERTDIR: "/certs"
   ROLE_NAME: ansible-role-common
   GALAXY_USERNAME: richardskumat
@@ -45,5 +41,12 @@ test_c7:
   stage: test
   variables:
     MOLECULE_DISTRO: "qwe1/docker-centos:7-molecule"
+  script:
+    - molecule test
+
+test_c8:
+  stage: test
+  variables:
+    MOLECULE_DISTRO: "qwe1/docker-centos:8-molecule"
   script:
     - molecule test
