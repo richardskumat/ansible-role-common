@@ -51,4 +51,6 @@
     - nmap
     - iperf
     - netcat-openbsd
+    # add jq for json parsing
+    - jq
   notify: restart unattended-upgrades
