@@ -32,18 +32,6 @@ ansible > 2.8
 Role Variables
 --------------
 
-These are unused vars from a time I used squid3 to cache local yum and
-apt-get runs.
-
-```
-# apt.conf
-apt_proxy_user: proxy_user
-apt_proxy_password: proxy_pass
-apt_proxy_url: 127.0.0.1
-apt_proxy_port: 3128
-apt_proxy_http: http
-```
-
 Debian and Raspbian mirrors, used in a templating task.
 
 ```

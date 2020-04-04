@@ -20,3 +20,6 @@ group_list: 'none'
 group_package_types: 'mandatory, default'
 debuglevel: '-2'
 mdpolicy: 'group:main'
+
+# dnf-automatic template
+dnf_automatic_apply_updates: 'yes'
