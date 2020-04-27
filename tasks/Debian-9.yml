@@ -41,6 +41,7 @@
     - virtualenv
     - python3-virtualenv
     - python3-setuptools
+    - virtualenv
     - gcc
     - lsb-release
     - nmap
