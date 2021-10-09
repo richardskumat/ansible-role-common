@@ -1,8 +1,14 @@
 deb {{ apt_src_main_url }} {{ ansible_distribution_release }} main non-free contrib
 deb-src {{ apt_src_main_url }} {{ ansible_distribution_release }} main non-free contrib
 
+{% if ansible_distribution_major_version >= 11 %}
+deb {{ apt_src_security_url }} {{ ansible_distribution_release }}-updates main contrib non-free
+deb-src {{ apt_src_security_url }} {{ ansible_distribution_release }}-updates main contrib non-free
+
+{% elif ansible_distribution_major_version <= 10 %}
 deb {{ apt_src_security_url }} {{ ansible_distribution_release }}/updates main contrib non-free
 deb-src {{ apt_src_security_url }} {{ ansible_distribution_release }}/updates main contrib non-free
+{% endif %}
 
 # {{ ansible_distribution_release }}-updates, previously known as 'volatile'
 deb {{ apt_src_main_url }} {{ ansible_distribution_release }}-updates main contrib non-free
