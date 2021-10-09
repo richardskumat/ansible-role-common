@@ -28,6 +28,7 @@ Unattended-Upgrade::Origins-Pattern {
       "o=Debian,n={{ ansible_distribution_release }}-updates";
       "o=Debian,n={{ ansible_distribution_release }}-proposed-updates";
       "o=Debian,n={{ ansible_distribution_release }},l=Debian-Security";
+      "o=Debian,n={{ ansible_distribution_release }}-security,label=Debian-Security";
 
         // Archive or Suite based matching:
         // Note that this will silently match a different release after
@@ -36,7 +37,6 @@ Unattended-Upgrade::Origins-Pattern {
 //      "o=Debian,a=stable";
 //      "o=Debian,a=stable-updates";
 //      "o=Debian,a=proposed-updates";
-        "origin=Debian,codename=${distro_codename},label=Debian-Security";
 };
 
 // List of packages to not update (regexp are supported)
@@ -48,7 +48,7 @@ Unattended-Upgrade::Package-Blacklist {
 };
 
 // This option allows you to control if on a unclean dpkg exit
-// unattended-upgrades will automatically run 
+// unattended-upgrades will automatically run
 //   dpkg --force-confold --configure -a
 // The default is true, to ensure updates keep getting installed
 //Unattended-Upgrade::AutoFixInterruptedDpkg "false";
@@ -79,7 +79,7 @@ Unattended-Upgrade::Package-Blacklist {
 //Unattended-Upgrade::Remove-Unused-Dependencies "false";
 
 // Automatically reboot *WITHOUT CONFIRMATION* if
-//  the file /var/run/reboot-required is found after the upgrade 
+//  the file /var/run/reboot-required is found after the upgrade
 //Unattended-Upgrade::Automatic-Reboot "false";
 
 // Automatically reboot even if there are users currently logged in.
