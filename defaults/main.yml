@@ -3,23 +3,3 @@ apt_src_main_url: 'http://cdn-fastly.deb.debian.org/debian'
 apt_src_security_url: 'http://security.debian.org/'
 raspbian_debian_mirrors: 'http://raspbian.raspberrypi.org/raspbian/'
 raspbian_specific_mirrors: 'http://archive.raspberrypi.org/debian/'
-
-# yum-cron template
-update_cmd: 'default'
-update_messages: 'yes'
-download_updates: 'yes'
-apply_updates: 'yes'
-random_sleep: '360'
-system_name: 'None'
-emit_via: 'stdio'
-output_width: '80'
-email_from: 'root@localhost'
-email_to: 'root'
-email_host: 'localhost'
-group_list: 'none'
-group_package_types: 'mandatory, default'
-debuglevel: '-2'
-mdpolicy: 'group:main'
-
-# dnf-automatic template
-dnf_automatic_apply_updates: 'yes'
