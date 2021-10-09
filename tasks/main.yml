@@ -5,23 +5,17 @@
   when:
     - ansible_distribution == 'Debian'
 
-- name: Include overrides specific to Centos 7.
-  include_tasks: "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
-  when:
-    - ansible_distribution == 'CentOS'
-    - ansible_distribution_major_version == "7"
-
-- name: Include overrides specific to Centos 8.
-  include_tasks: "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
-  when:
-    - ansible_distribution == 'CentOS'
-    - ansible_distribution_major_version == "8"
-
 - name: Include overrides specific to Debian 9.
   include_tasks: "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
   when:
     - ansible_distribution == 'Debian'
     - ansible_distribution_major_version == "9"
+
+- name: Include overrides specific to Debian 10.
+  include_tasks: "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
+  when:
+    - ansible_distribution == 'Debian'
+    - ansible_distribution_major_version == "10"
 
 - name: Include overrides specific to Debian 10.
   include_tasks: "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
