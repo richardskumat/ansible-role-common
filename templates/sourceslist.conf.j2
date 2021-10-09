@@ -2,9 +2,8 @@ deb {{ apt_src_main_url }} {{ ansible_distribution_release }} main non-free cont
 deb-src {{ apt_src_main_url }} {{ ansible_distribution_release }} main non-free contrib
 
 {% if ansible_distribution == 'Debian' and ansible_distribution_major_version|int >= 11 %}
-deb {{ apt_src_security_url }} {{ ansible_distribution_release }}-updates main contrib non-free
-deb-src {{ apt_src_security_url }} {{ ansible_distribution_release }}-updates main contrib non-free
-
+deb {{ apt_src_security_url }} {{ ansible_distribution_release }}-security main
+deb-src {{ apt_src_security_url }} {{ ansible_distribution_release }}-security main
 {% elif ansible_distribution == 'Debian' and ansible_distribution_major_version|int <= 10 %}
 deb {{ apt_src_security_url }} {{ ansible_distribution_release }}/updates main contrib non-free
 deb-src {{ apt_src_security_url }} {{ ansible_distribution_release }}/updates main contrib non-free
