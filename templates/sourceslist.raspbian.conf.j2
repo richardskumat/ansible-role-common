@@ -2,8 +2,8 @@ deb {{ raspbian_debian_mirrors }} {{ ansible_distribution_release }} main contri
 # Uncomment line below then 'apt-get update' to enable 'apt-get source'
 #deb-src {{ raspbian_debian_mirrors }} {{ ansible_distribution_release }} main contrib non-free rpi
 
-# https://raspberrypi.stackexchange.com/questions/75834/difference-between-archive-raspbian-org-and-archive-raspberrypi-org 
+# https://raspberrypi.stackexchange.com/questions/75834/difference-between-archive-raspbian-org-and-archive-raspberrypi-org
 # raspberrypi.org is the charity and holds packages specifically created for the Pi and which are not part of Raspbian/Debian.
-deb {{ raspbian_specific_mirrors }} {{ ansible_distribution_release }} main ui
+deb {{ raspbian_specific_mirrors }} {{ ansible_distribution_release }} main
 # Uncomment line below then 'apt-get update' to enable 'apt-get source'
-#deb-src {{ raspbian_specific_mirrors }} {{ ansible_distribution_release }} main ui
+#deb-src {{ raspbian_specific_mirrors }} {{ ansible_distribution_release }} main

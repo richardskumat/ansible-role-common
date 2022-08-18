@@ -24,11 +24,19 @@ Unattended-Upgrade::Origins-Pattern {
         // Codename based matching:
         // This will follow the migration of a release through different
         // archives (e.g. from testing to stable and later oldstable).
+      {% if ansible_distribution_release == 'Debian ' %}
       "o=Debian,n={{ ansible_distribution_release }}";
       "o=Debian,n={{ ansible_distribution_release }}-updates";
       "o=Debian,n={{ ansible_distribution_release }}-proposed-updates";
       "o=Debian,n={{ ansible_distribution_release }},l=Debian-Security";
       "o=Debian,n={{ ansible_distribution_release }}-security,label=Debian-Security";
+
+      {% elif ansible_lsb.id == 'Raspbian' %}
+      "o=Raspbian,n={{ ansible_distribution_release }}";
+      "o=Raspbian,n={{ ansible_distribution_release }}-updates";
+      "o=Raspbian,n={{ ansible_distribution_release }}-proposed-updates";
+      "o=Raspbian,n={{ ansible_distribution_release }},l=Raspbian";
+      {% endif %}
 
         // Archive or Suite based matching:
         // Note that this will silently match a different release after
