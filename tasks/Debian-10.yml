@@ -1,4 +1,6 @@
 ---
+# keep this task file around for the time being if I need to reference
+# Debian 10 packages
 - name: install common basic package list
   apt:
    install_recommends: 'no'
