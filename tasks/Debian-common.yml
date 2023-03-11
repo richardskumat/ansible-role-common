@@ -31,6 +31,8 @@
    name:
     - aptitude
     - unattended-upgrades
+    # add this package since in D11 unattended-upgrades is useless without it
+    - powermgmt-base
 
 - name: Run apt-get upgrade
   apt:
