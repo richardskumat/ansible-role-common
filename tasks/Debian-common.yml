@@ -4,7 +4,7 @@
 # ie look at templates/sourceslist.conf.j2
 # sid and testing don't need backports and security
 - name: Create sources.list file
-  template:
+  ansible.builtin.template:
    src: sourceslist.conf.j2
    dest: /etc/apt/sources.list
    owner: root
@@ -15,7 +15,7 @@
    - not ansible_lsb.id == 'Raspbian'
 
 - name: Create sources.list file for Raspbian
-  template:
+  ansible.builtin.template:
    src: sourceslist.raspbian.conf.j2
    dest: /etc/apt/sources.list
    owner: root
@@ -26,7 +26,7 @@
    - ansible_lsb.id == 'Raspbian'
 
 - name: Update cache
-  apt:
+  ansible.builtin.apt:
    update_cache: 'yes'
    name:
     - aptitude
@@ -35,32 +35,32 @@
     - powermgmt-base
 
 - name: Run apt-get upgrade
-  apt:
+  ansible.builtin.apt:
    upgrade: safe
 
 - name: Remove apt package popularity-contest
-  apt:
+  ansible.builtin.apt:
    name: popularity-contest
    state: absent
 
 - name: Create unattended conf file
-  template:
+  ansible.builtin.template:
    src: 50unattended-upgrades.j2
    dest: /etc/apt/apt.conf.d/50unattended-upgrades
    owner: root
    group: root
    mode: 0644
    backup: 'yes'
-  notify: restart unattended-upgrades
+  notify: 'Restart unattended-upgrades'
 
 # I believe this is required since buster
 # since I don't remember having this task for stretch
 - name: Create unattended conf file to enable unattended-upgrades
-  template:
+  ansible.builtin.template:
    src: 20auto-upgrades.j2
    dest: /etc/apt/apt.conf.d/20auto-upgrades
    owner: root
    group: root
    mode: 0644
    backup: 'yes'
-  notify: restart unattended-upgrades
+  notify: 'Restart unattended-upgrades'
