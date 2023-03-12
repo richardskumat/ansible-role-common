@@ -1,17 +1,17 @@
 ---
 
 - name: Remove the default /etc/apt/sources.list.d/raspi.list
-  file:
+  ansible.builtin.file:
    dest: /etc/apt/sources.list.d/raspi.list
    state: absent
 
 - name: Update apt cache
-  apt:
+  ansible.builtin.apt:
    update_cache: 'yes'
 
 # remove some packages
 - name: Remove bluetooth packages
-  apt:
+  ansible.builtin.apt:
    name:
     - bluez
     - bluez-firmware
