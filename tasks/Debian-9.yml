@@ -1,8 +1,8 @@
 ---
 # keep this task file around for the time being if I need to reference
 # Debian 9 packages
-- name: install common basic package list
-  apt:
+- name: Install common basic package list
+  ansible.builtin.apt:
    install_recommends: 'no'
    name:
     - git
@@ -52,4 +52,4 @@
     # add jq for json parsing
     - jq
     - sshfs
-  notify: restart unattended-upgrades
+  notify: 'Restart unattended-upgrades'

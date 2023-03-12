@@ -4,6 +4,7 @@
    name: unattended-upgrades
    state: restarted
    enabled: 'yes'
+  listen: 'Restart unattended-upgrades'
 
 - name: Enable yum-cron on CentOS 7
   ansible.builtin.service:
