@@ -1,27 +1,27 @@
 ---
-- name: restart unattended-upgrades
-  service:
+- name: Restart unattended-upgrades
+  ansible.builtin.service:
    name: unattended-upgrades
    state: restarted
    enabled: 'yes'
 
-- name: enable yum-cron on CentOS 7
-  service:
+- name: Enable yum-cron on CentOS 7
+  ansible.builtin.service:
    name: yum-cron
    state: restarted
    enabled: 'yes'
-  listen: "enable yum-cron"
+  listen: "Enable yum-cron"
 
-- name: enable smartd
-  service:
+- name: Enable smartd
+  ansible.builtin.service:
    name: smartd
    state: restarted
    enabled: 'yes'
-  listen: "enable smartd"
+  listen: "Enable smartd"
 
-- name: enable dnf-automatic on CentOS 8
-  service:
+- name: Enable dnf-automatic on CentOS 8
+  ansible.builtin.service:
    name: dnf-automatic
    state: restarted
    enabled: 'yes'
-  listen: "enable dnf-automatic"
+  listen: "Enable dnf-automatic"
