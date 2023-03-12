@@ -1,28 +1,28 @@
 ---
 
 - name: Include common templating for Debian
-  include_tasks: "{{ ansible_distribution }}-common.yml"
+  ansible.builtin.include_tasks: "{{ ansible_distribution }}-common.yml"
   when:
     - ansible_distribution == 'Debian'
 
 - name: Include overrides specific to Debian 9.
-  include_tasks: "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
+  ansible.builtin.include_tasks: "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
   when:
     - ansible_distribution == 'Debian'
     - ansible_distribution_major_version == "9"
 
 - name: Include overrides specific to Debian 10.
-  include_tasks: "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
+  ansible.builtin.include_tasks: "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
   when:
     - ansible_distribution == 'Debian'
     - ansible_distribution_major_version == "10"
 
 - name: Include overrides specific to Debian 11.
-  include_tasks: "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
+  ansible.builtin.include_tasks: "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
   when:
     - ansible_distribution == 'Debian'
     - ansible_distribution_major_version == "11"
 
 - name: Include overrides specific to Raspbian.
-  include_tasks: "{{ ansible_lsb.id }}.yml"
+  ansible.builtin.include_tasks: "{{ ansible_lsb.id }}.yml"
   when: ansible_lsb.id == 'Raspbian'
