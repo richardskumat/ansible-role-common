@@ -20,10 +20,6 @@ Github:
 
 https://github.com/richardskumat/ansible-role-common
 
-Travis:
-
-https://travis-ci.org/richardskumat/ansible-role-common
-
 Requirements
 ------------
 
